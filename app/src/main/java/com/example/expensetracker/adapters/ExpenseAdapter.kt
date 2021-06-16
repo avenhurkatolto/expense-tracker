@@ -31,7 +31,7 @@ class ExpenseAdapter : ListAdapter<ExpenseModel, ExpenseAdapter.ExpenseViewHolde
         fun bind(title: String?, expense: Int, date: Date) {
             titleText.text = title
             dateText.text = formatter.format(date)
-            expenseText.text = expense.toString()
+            expenseText.text = expense.toString() + " Ft"
         }
 
         companion object {

@@ -11,17 +11,34 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/sum"
+            android:id="@+id/total"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:background="@color/teal_200"
+            android:layout_height="40dp"
+            android:background="@color/color_primary"
             android:gravity="center"
-            app:layout_constraintBottom_toTopOf="@id/recyclerview"
+            android:textSize="20sp"
+            android:textColor="@color/color_secondary"
+            android:textStyle="bold"
+            android:text="Total expenses"
+            app:layout_constraintBottom_toTopOf="@id/sum"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            tools:text="465464" />
+
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/color_primary"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/color_secondary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/recyclerview"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total"
             tools:text="465464" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -43,7 +60,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        android:src="@drawable/ic_add_expense"
+        app:tint="@color/color_primary"
+        app:backgroundTint="@color/color_secondary"
+         />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
