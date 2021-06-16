@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
             list.forEach{
                 sum+=it.expense
             }
-           binding.sum.text = sum.toString()
+           binding.sum.text = sum.toString() + "Ft"
         }
 
         binding.fab.setOnClickListener {

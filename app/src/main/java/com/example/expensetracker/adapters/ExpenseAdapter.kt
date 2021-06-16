@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.expensetracker.R
-import com.example.expensetracker.databinding.ItemExpenseListBinding
 import com.example.expensetracker.model.ExpenseModel
+import java.text.SimpleDateFormat
 import java.util.*
 
 class ExpenseAdapter : ListAdapter<ExpenseModel, ExpenseAdapter.ExpenseViewHolder>(COMPARATOR) {
@@ -28,9 +28,9 @@ class ExpenseAdapter : ListAdapter<ExpenseModel, ExpenseAdapter.ExpenseViewHolde
         private val dateText: TextView = itemView.findViewById(R.id.date)
         private val expenseText: TextView = itemView.findViewById(R.id.expense)
 
-        fun bind(title: String?, expense: Int, date : Date) {
+        fun bind(title: String?, expense: Int, date: Date) {
             titleText.text = title
-            dateText.text = date.toString()
+            dateText.text = formatter.format(date)
             expenseText.text = expense.toString()
         }
 
@@ -44,6 +44,8 @@ class ExpenseAdapter : ListAdapter<ExpenseModel, ExpenseAdapter.ExpenseViewHolde
     }
 
     companion object {
+        val formatter = SimpleDateFormat("yyyy.MM.dd.")
+
         private val COMPARATOR = object : DiffUtil.ItemCallback<ExpenseModel>() {
             override fun areItemsTheSame(oldItem: ExpenseModel, newItem: ExpenseModel): Boolean {
                 return oldItem === newItem

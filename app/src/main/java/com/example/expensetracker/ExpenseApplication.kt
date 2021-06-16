@@ -10,7 +10,7 @@ class ExpenseApplication : Application() {
 
     val applicationScope = CoroutineScope(SupervisorJob())
 
-
     val database by lazy { ExpenseDatabase.getDatabase(this, applicationScope) }
     val repository by lazy { ExpenseRepository(database.expenseDao()) }
+
 }
